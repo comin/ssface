@@ -27,6 +27,9 @@ public class PluginsDisponiveisPanel extends javax.swing.JPanel {
         initComponents();
         mainPanel.setBackground(Color.WHITE);
         mainPanel.setLayout(new VerticalLayout(4));
+    }
+
+    public void start() {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 recuperarInstalados();

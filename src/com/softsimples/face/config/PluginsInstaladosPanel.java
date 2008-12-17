@@ -17,7 +17,9 @@ public class PluginsInstaladosPanel extends javax.swing.JPanel {
         this.pluginListModel = new GenericListModel<Bundle>();
         this.pluginInstaladoRenderer = new PluginInstaladoRenderer();
         initComponents();
-        
+    }
+
+    public void start() {
         Framework framework = Resource.get(ResourceType.OSGIFramework);
         Bundle[] bundles = framework.getSystemBundleContext().getBundles();
         for (Bundle bundle : bundles) {
@@ -25,7 +27,6 @@ public class PluginsInstaladosPanel extends javax.swing.JPanel {
         }
         mainList.updateUI();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

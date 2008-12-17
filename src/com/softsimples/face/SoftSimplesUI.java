@@ -2,8 +2,8 @@ package com.softsimples.face;
 
 import com.softsimples.face.resource.Resource;
 import com.softsimples.face.resource.ResourceType;
-import com.softsimples.services.MenuPrincipalService;
-import com.softsimples.services.MenuPrincipalServiceImpl;
+import com.softsimples.face.services.MenuPrincipalService;
+import com.softsimples.face.services.MenuPrincipalServiceImpl;
 import com.softsimples.ui.base.CloseWindowListener;
 import com.softsimples.ui.base.OpenWindowListener;
 import com.softsimples.ui.base.OverlayPanel;

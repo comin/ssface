@@ -24,7 +24,7 @@ public class SoftSimplesMenu extends MenuPanel {
     private MenuTooltip blogTooltip;
     private SGTransform.Translate blogTranslation;
     
-    private OverlayPanel bundleConfigOverlay;
+    private BundleConfigFormPanel bundleConfigOverlay;
     private FXGroup bundleGroup;
     
     public SoftSimplesMenu() {
@@ -56,6 +56,10 @@ public class SoftSimplesMenu extends MenuPanel {
     @Override
     public void configurePanels() {
         this.bundleConfigOverlay = new BundleConfigFormPanel();
+    }
+
+    public void comecarPaineisOSGI() {
+        this.bundleConfigOverlay.startOSGI();
     }
 
     public void removeMenuItem(FXImage fxImage) {

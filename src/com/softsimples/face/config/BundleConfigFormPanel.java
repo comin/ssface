@@ -34,6 +34,10 @@ public class BundleConfigFormPanel extends BasicFormPanel {
     @Override
     public void salvar() {}
 
+    public void startOSGI() {
+        this.bundleConfigPanel.startOSGI();
+    }
+
     @Override
     protected void configurePanel() {
         this.bundleConfigPanel = new BundleConfigPanel();
