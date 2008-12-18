@@ -32,6 +32,32 @@
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="com.softsimples.face.config.PluginsDisponiveisPanel" name="pluginsDisponiveisPanel">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Plugins disponiveis"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Plugins disponiveis">
+                <Property name="tabTitle" type="java.lang.String" value="Plugins disponiveis"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="com.softsimples.face.config.PluginsInstaladosPanel" name="pluginsInstaladosPanel">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Plugins instalados"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Plugins instalados">
+                <Property name="tabTitle" type="java.lang.String" value="Plugins instalados"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>

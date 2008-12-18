@@ -59,7 +59,14 @@ public class SoftSimplesMenu extends MenuPanel {
     }
 
     public void comecarPaineisOSGI() {
-        this.bundleConfigOverlay.startOSGI();
+        Thread thread = new Thread(new Runnable() {
+            public void run() {
+                bundleConfigOverlay.startOSGI();
+            }
+        });
+        thread.setPriority(Thread.NORM_PRIORITY);
+        thread.start();
+        
     }
 
     public void removeMenuItem(FXImage fxImage) {
