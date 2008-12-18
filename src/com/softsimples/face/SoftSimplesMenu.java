@@ -154,7 +154,7 @@ public class SoftSimplesMenu extends MenuPanel {
             graphics2D.setBackground(Color.WHITE);
             graphics2D.fillRect(0, 0, gradient.getWidth(), gradient.getHeight());
             graphics2D.setPaint(new TexturePaint(backgroundImage, new Rectangle(0,0,gradient.getWidth(), gradient.getHeight())));
-            graphics2D.fillRoundRect(0, 0, gradient.getWidth(), gradient.getHeight(), 20, 20);
+            graphics2D.fillRect(0, 0, gradient.getWidth(), gradient.getHeight());
             graphics2D.dispose();
         }
         return gradient;
