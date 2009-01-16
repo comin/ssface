@@ -4,7 +4,6 @@ import com.softsimples.face.file.DiretorioWrapper;
 import com.softsimples.face.file.DiretorioWrapperFactory;
 import com.softsimples.face.file.PluginWrapper;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SiteUpdate extends Domain {
@@ -34,17 +33,5 @@ public class SiteUpdate extends Domain {
     public static List<PluginWrapper> getPluginsDisponiveis(URL url) throws Exception {
         DiretorioWrapper diretorioWrapper = DiretorioWrapperFactory.getDiretorioWrapper(url);
         return diretorioWrapper.listFiles();
-    }
-    
-    public List<SitePlugin> getListaDePlugins() throws Exception {
-        if (listaDePlugins == null) listaDePlugins = new ArrayList<SitePlugin>();
-        if (listaDePlugins.size() == 0) {
-            DiretorioWrapper diretorioWrapper = DiretorioWrapperFactory.getDiretorioWrapper(new URL(this.getUrl()));
-            List<PluginWrapper> listaWrappers = diretorioWrapper.listFiles();
-            for (PluginWrapper pluginWrapper : listaWrappers) {
-                listaDePlugins.add(new SitePlugin(pluginWrapper));
-            }
-        }
-        return listaDePlugins;
     }
 }
