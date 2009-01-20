@@ -30,17 +30,28 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="DejaVu Sans" size="13" style="1"/>
+        </Property>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Component class="com.softsimples.face.config.PluginsDisponiveisPanel" name="pluginsDisponiveisPanel">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Plugins disponiveis"/>
+            <Property name="toolTipText" type="java.lang.String" value="Plugins dispon&#xed;veis"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="DejaVu Sans" size="13" style="1"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Plugins disponiveis">
-                <Property name="tabTitle" type="java.lang.String" value="Plugins disponiveis"/>
+              <JTabbedPaneConstraints tabName="Plugins dispon&#xed;veis ">
+                <Property name="tabTitle" type="java.lang.String" value="Plugins dispon&#xed;veis "/>
+                <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icons/package_find.png"/>
+                </Property>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -48,11 +59,17 @@
         <Component class="com.softsimples.face.config.PluginsInstaladosPanel" name="pluginsInstaladosPanel">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Plugins instalados"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="DejaVu Sans" size="13" style="1"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Plugins instalados">
-                <Property name="tabTitle" type="java.lang.String" value="Plugins instalados"/>
+              <JTabbedPaneConstraints tabName="Plugins instalados ">
+                <Property name="tabTitle" type="java.lang.String" value="Plugins instalados "/>
+                <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icons/package_view.png"/>
+                </Property>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

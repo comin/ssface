@@ -1,11 +1,9 @@
 package com.softsimples.face.domain;
 
-import com.softsimples.face.file.ManifestWrapper;
-import com.softsimples.face.file.PluginWrapper;
-import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.JSONObject;
 
 public class SitePlugin extends Domain {
     private static final long serialVersionUID = 1L;
@@ -24,22 +22,17 @@ public class SitePlugin extends Domain {
     
     public SitePlugin() {}
     
-    public SitePlugin(PluginWrapper pluginWrapper) {
-        ManifestWrapper manifestWrapper;
+    public SitePlugin(JSONObject jsonPlugin) {
         try {
-            manifestWrapper = pluginWrapper.getManifest();
-            this.setNomeSimbolico(manifestWrapper.bundleSymbolicName());
-            this.setImportPackage(manifestWrapper.bundleImportPackage());
-            this.setExportPackage(manifestWrapper.bundleExportPackage());
-            this.setClasspath(manifestWrapper.bundleClasspath());
-            this.setCategoria(manifestWrapper.bundleCategory());
-            this.setActivator(manifestWrapper.bundleActivator());
-            this.setNome(manifestWrapper.bundleName());
-            this.setAutor(manifestWrapper.bundleVendor());
-            this.setDescricao(manifestWrapper.bundleDescription());
-            this.setVersao(manifestWrapper.bundleVersion());
-            this.setUrl(pluginWrapper.getUrl());
-        } catch (IOException ex) {
+            this.setNomeSimbolico(jsonPlugin.getString("bundle_symbolic_name"));
+            this.setCategoria(jsonPlugin.getString("bundle_category"));
+            this.setActivator(jsonPlugin.getString("bundle_activator"));
+            this.setNome(jsonPlugin.getString("bundle_name"));
+            this.setAutor(jsonPlugin.getString("bundle_vendor"));
+            this.setDescricao(jsonPlugin.getString("bundle_description"));
+            this.setVersao(jsonPlugin.getString("bundle_version"));
+            this.setUrl(new URL("http://www.softsimples.com.br/plugins/"+jsonPlugin.getString("bundle_server_path")));
+        } catch (Exception ex) {
             Logger.getLogger(SitePlugin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

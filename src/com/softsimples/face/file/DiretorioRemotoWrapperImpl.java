@@ -35,7 +35,7 @@ public class DiretorioRemotoWrapperImpl implements DiretorioWrapper {
     @Override
     public List<PluginWrapper> listFiles() throws IOException {
         List<PluginWrapper> lista = new ArrayList<PluginWrapper>();
-        URL xmlURL = new URL(this.url.toString()+"/plugins.xml");
+        URL xmlURL = new URL(this.url.toString());
         try {
             URLConnection connection = xmlURL.openConnection();
             connection.setUseCaches(false);

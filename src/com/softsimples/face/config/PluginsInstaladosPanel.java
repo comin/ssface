@@ -1,59 +1,62 @@
 package com.softsimples.face.config;
 
-import com.softsimples.face.config.render.PluginInstaladoRenderer;
+import com.softsimples.face.config.render.PluginInstaladoRendererPanel;
+import com.softsimples.face.layout.VerticalLayout;
 import com.softsimples.face.model.GenericListModel;
 import com.softsimples.face.resource.Resource;
 import com.softsimples.face.resource.ResourceType;
+import java.awt.Color;
 import org.knopflerfish.framework.Framework;
 import org.osgi.framework.Bundle;
 
 public class PluginsInstaladosPanel extends javax.swing.JPanel {
     
     private GenericListModel<Bundle> pluginListModel;
-    private PluginInstaladoRenderer pluginInstaladoRenderer;
     
     public PluginsInstaladosPanel() {
+        this.setBackground(Color.WHITE);
         this.setName("Plugins instalados");
-        this.pluginListModel = new GenericListModel<Bundle>();
-        this.pluginInstaladoRenderer = new PluginInstaladoRenderer();
         initComponents();
+        mainPanel.setBackground(Color.WHITE);
+        mainPanel.setLayout(new VerticalLayout(4));
     }
 
     public void start() {
         Framework framework = Resource.get(ResourceType.OSGIFramework);
         Bundle[] bundles = framework.getSystemBundleContext().getBundles();
         for (Bundle bundle : bundles) {
-            if (bundle.getBundleId() != 0) this.pluginListModel.addElement(bundle);
+            if (bundle.getBundleId() != 0) mainPanel.add(new PluginInstaladoRendererPanel(bundle, false, Color.WHITE));
         }
-        mainList.updateUI();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        mainList = new javax.swing.JList();
+        mainPanel = new javax.swing.JPanel();
 
-        mainList.setModel( this.pluginListModel);
-        mainList.setCellRenderer(this.pluginInstaladoRenderer);
-        jScrollPane1.setViewportView(mainList);
+        setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 487, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 224, Short.MAX_VALUE)
         );
+
+        jScrollPane1.setViewportView(mainPanel);
+
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList mainList;
+    private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 
 }

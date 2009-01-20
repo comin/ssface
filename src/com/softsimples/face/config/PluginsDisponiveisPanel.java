@@ -1,14 +1,12 @@
 package com.softsimples.face.config;
 
 import com.softsimples.face.config.render.PluginDisponivelRendererPanel;
+import com.softsimples.face.domain.SitePlugin;
 import com.softsimples.face.domain.SiteUpdate;
-import com.softsimples.face.file.PluginWrapper;
 import com.softsimples.face.layout.VerticalLayout;
 import com.softsimples.face.resource.Resource;
 import com.softsimples.face.resource.ResourceType;
 import java.awt.Color;
-import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,10 +42,10 @@ public class PluginsDisponiveisPanel extends javax.swing.JPanel {
     }
     public void carregarPlugins() {
         try {
-            List<PluginWrapper> plugins = SiteUpdate.getPluginsDisponiveis(new URL("http://www.softsimples.com/plugins"));
-            for (PluginWrapper pluginWrapper : plugins) {
-                if (!jaEstaInstalado(pluginWrapper)) {
-                    mainPanel.add(new PluginDisponivelRendererPanel(pluginWrapper, false, Color.WHITE));
+            List<SitePlugin> plugins = SiteUpdate.getPluginsDisponiveis("http://www.softsimples.com.br/plugin/todosOsPlugins");
+            for (SitePlugin sitePlugin: plugins) {
+                if (!jaEstaInstalado(sitePlugin)) {
+                    mainPanel.add(new PluginDisponivelRendererPanel(sitePlugin, false, Color.WHITE));
                 }
             }
         } catch (Exception ex) {
@@ -55,19 +53,15 @@ public class PluginsDisponiveisPanel extends javax.swing.JPanel {
         }
     }
     
-    public boolean jaEstaInstalado(PluginWrapper pluginWrapper) {
+    public boolean jaEstaInstalado(SitePlugin sitePlugin) {
         boolean retorno = false;
         for (int i = 0; i < instalados.length; i++) {
             Bundle bundle = instalados[i];
             String symbolicName;
-            try {
-                symbolicName = pluginWrapper.getManifest().bundleSymbolicName();
-                if (bundle.getSymbolicName().equals(symbolicName)) {
-                    retorno = true;
-                    break;
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(PluginsDisponiveisPanel.class.getName()).log(Level.SEVERE, null, ex);
+            symbolicName = sitePlugin.getNomeSimbolico();
+            if (bundle.getSymbolicName().equals(symbolicName)) {
+                retorno = true;
+                break;
             }
         }
         return retorno;

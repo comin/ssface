@@ -22,11 +22,15 @@ public class BundleConfigPanel extends javax.swing.JPanel {
 
         setOpaque(false);
 
-        pluginsDisponiveisPanel.setToolTipText("Plugins disponiveis");
-        jTabbedPane1.addTab("Plugins disponiveis", pluginsDisponiveisPanel);
+        jTabbedPane1.setFont(new java.awt.Font("DejaVu Sans", 1, 13)); // NOI18N
+
+        pluginsDisponiveisPanel.setToolTipText("Plugins disponíveis");
+        pluginsDisponiveisPanel.setFont(new java.awt.Font("DejaVu Sans", 1, 13)); // NOI18N
+        jTabbedPane1.addTab("Plugins disponíveis ", new javax.swing.ImageIcon(getClass().getResource("/icons/package_find.png")), pluginsDisponiveisPanel); // NOI18N
 
         pluginsInstaladosPanel.setToolTipText("Plugins instalados");
-        jTabbedPane1.addTab("Plugins instalados", pluginsInstaladosPanel);
+        pluginsInstaladosPanel.setFont(new java.awt.Font("DejaVu Sans", 1, 13)); // NOI18N
+        jTabbedPane1.addTab("Plugins instalados ", new javax.swing.ImageIcon(getClass().getResource("/icons/package_view.png")), pluginsInstaladosPanel); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
